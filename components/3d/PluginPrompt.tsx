@@ -16,10 +16,10 @@ export default function PluginPrompt({ wallCount, timeSaved, timeSpent }: Plugin
   // Show the prompt after user has created some walls or spent some time
   useEffect(() => {
     // Show prompt if user has created at least 3 walls or spent 4+ seconds
-    if ((wallCount >= 6 || timeSpent >= 5) && !showPrompt) {
+    if ((wallCount >= 4 || timeSpent >= 3) && !showPrompt) {
       const timer = setTimeout(() => {
         setShowPrompt(true);
-      }, 5500);
+      }, 1000);
       
       return () => clearTimeout(timer);
     }
