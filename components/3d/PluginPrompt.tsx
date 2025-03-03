@@ -16,7 +16,7 @@ export default function PluginPrompt({ wallCount, timeSaved, timeSpent }: Plugin
   // Show the prompt after user has created some walls or spent some time
   useEffect(() => {
     // Show prompt if user has created at least 3 walls or spent 4+ seconds
-    if ((wallCount >= 4 || timeSpent >= 3) && !showPrompt) {
+    if ((wallCount - 3 >= 2) && !showPrompt) {
       const timer = setTimeout(() => {
         setShowPrompt(true);
       }, 1000);
@@ -67,7 +67,7 @@ export default function PluginPrompt({ wallCount, timeSaved, timeSpent }: Plugin
             
             <div className="mb-4">
               <p className="text-neutral-800 mb-3">
-                You&apos;ve created <span className="font-bold text-accent-700">{wallCount} walls</span> and saved <span className="font-bold text-primary-700">{timeSaved.toFixed(2)} minutes</span>!
+                You&apos;ve created <span className="font-bold text-accent-700">{wallCount -3} walls</span> and saved <span className="font-bold text-primary-700">{timeSaved.toFixed(2)} minutes</span>!
               </p>
               <p className="text-neutral-600 mb-3">
                 Imagine using this same efficient workflow directly in Revit with our plugin.
